@@ -39,11 +39,7 @@ public class VehicleService {
 
     @Transactional(readOnly = true)
     public Optional<VehicleDto> getVehicle(final long id) {
-        return convert(vehicleRepository.findById(id));
-    }
-
-    private Optional<VehicleDto> convert(Optional<Vehicle> vehicle) {
-        return vehicle.map(this::convert);
+        return vehicleRepository.findById(id).map(this::convert);
     }
 
     private VehicleDto convert(Vehicle vehicle) {
