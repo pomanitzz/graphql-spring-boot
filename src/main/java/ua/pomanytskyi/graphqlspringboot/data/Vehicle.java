@@ -1,4 +1,4 @@
-package ua.pomanytskyi.graphqlspringboot.domain;
+package ua.pomanytskyi.graphqlspringboot.data;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

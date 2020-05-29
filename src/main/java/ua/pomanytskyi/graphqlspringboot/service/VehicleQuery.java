@@ -1,9 +1,8 @@
-package ua.pomanytskyi.graphqlspringboot.query;
+package ua.pomanytskyi.graphqlspringboot.service;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import org.springframework.stereotype.Component;
-import ua.pomanytskyi.graphqlspringboot.domain.Vehicle;
-import ua.pomanytskyi.graphqlspringboot.service.VehicleService;
+import ua.pomanytskyi.graphqlspringboot.data.VehicleDto;
 
 import java.util.List;
 import java.util.Optional;
@@ -25,14 +24,14 @@ public class VehicleQuery implements GraphQLQueryResolver {
     /**
      * Mapped in vehicleql.graphgls in: Query#vehicles
      */
-    public List<Vehicle> getVehicles(final int count) {
+    public List<VehicleDto> getVehicles(final int count) {
         return this.vehicleService.getAllVehicles(count);
     }
 
     /**
      * Mapped in vehicleql.graphgls in: Query#vehicle
      */
-    public Optional<Vehicle> getVehicle(final long id) {
+    public Optional<VehicleDto> getVehicle(final long id) {
         return this.vehicleService.getVehicle(id);
     }
 }

@@ -1,9 +1,8 @@
-package ua.pomanytskyi.graphqlspringboot.mutation;
+package ua.pomanytskyi.graphqlspringboot.service;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import org.springframework.stereotype.Component;
-import ua.pomanytskyi.graphqlspringboot.domain.Vehicle;
-import ua.pomanytskyi.graphqlspringboot.service.VehicleService;
+import ua.pomanytskyi.graphqlspringboot.data.VehicleDto;
 
 /**
  * Implementation of {@link GraphQLMutationResolver}.
@@ -22,7 +21,7 @@ public class VehicleMutation implements GraphQLMutationResolver {
     /**
      * Mapped in vehicleql.graphgls in: Mutation#createVehicle
      */
-    public Vehicle createVehicle(final String type, final String modelCode, final String brandName, final String launchDate) {
+    public VehicleDto createVehicle(final String type, final String modelCode, final String brandName, final String launchDate) {
         return this.vehicleService.createVehicle(type, modelCode, brandName, launchDate);
     }
 }
