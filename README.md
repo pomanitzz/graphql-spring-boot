@@ -3,7 +3,7 @@
 1. GraphQL
 2. SpringBoot
 3. H2 in runtime
-4. Spring, Lombok
+4. Spring, Lombok, Java 11
 
 #### How to run demo
 
